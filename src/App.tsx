@@ -1,12 +1,18 @@
 import React from 'react';
 import './App.css';
-import Shipment from "./components/Shipment";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import CourierPage from "./components/CourierPage";
+import CustomerPage from "./components/CustomerPage";
 
 function App() {
   return (
-    <div className="App">
-        <Shipment></Shipment>
-    </div>
+      <BrowserRouter>
+          <Routes>
+              <Route path="/customer" element={<CustomerPage/>}></Route>
+              <Route path="/courier" element={<CourierPage/>}></Route>
+          </Routes>
+      </BrowserRouter>
+
   );
 }
 
